@@ -23,7 +23,7 @@ sudo mkdir  -p /etc/containerd
 containerd config default | sudo tee /etc/containerd/config.toml
 sudo sed -i 's/SystemdCgroup = false/SystemdCgroup = true/' /etc/containerd/config.toml
 sudo sed -i 's/disabled_plugins.*/#disabled_plugins/' /etc/containerd/config.toml
-udo sed -i 's/cgroupDriver: cgroupfs/cgroupDriver: systemd/' /var/lib/kubelet/config.yaml
+sudo sed -i 's/cgroupDriver: cgroupfs/cgroupDriver: systemd/' /var/lib/kubelet/config.yaml
 sudo systemctl restart containerd
 sudo sed -i.bak 's/KUBELET_KUBEADM_ARGS=\".*/KUBELET_KUBEADM_ARGS=\"--container-runtime=remote  --container-runtime-endpoint=unix:\/\/\/run\/containerd\/containerd.sock\"/' /var/lib/kubelet/kubeadm-flags.env
 
