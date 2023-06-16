@@ -1,7 +1,7 @@
 # based on this https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/
 sudo sed -i.bak 's/exclude=kube\*/#exclude=kube\*/' /etc/yum.repos.d/kubernetes.repo
 
-for ver in 4 5 6
+for ver in 4 5 6 7
 do
 
 VERSION=$(yum list --showduplicates kubeadm --disableexcludes=kubernetes -y | grep 1.2$ver| tail -n 1 | head -n 1 | cut -d' ' -f24 | cut -d'-' -f1)
