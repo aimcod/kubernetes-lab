@@ -52,7 +52,7 @@ systemctl enable --now containerd kubelet
 
 kubeadm init
 
-kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/baremetal/deploy.yaml
 
 kubectl get nodes
 
