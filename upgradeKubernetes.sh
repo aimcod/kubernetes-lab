@@ -1,5 +1,7 @@
 # based on this https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/
 sudo sed -i.bak 's/exclude=kube\*/#exclude=kube\*/' /etc/yum.repos.d/kubernetes.repo
+sudo sed -i.bak 's/exclude=kube\*/#exclude=kube\*/' /etc/dnf/dnf.conf
+sudo sed -i.bak 's/exclude=kube\*/#exclude=kube\*/' /etc/yum.conf
 
 for ver in 4 5 6 7
 do
@@ -44,3 +46,6 @@ read -p "Please review the previou upgrade step, make sure all notes are on $VER
 
 done
 sudo sed -i.bak 's/#exclude=kube\*/exclude=kube\*/' /etc/yum.repos.d/kubernetes.repo
+sudo sed -i.bak 's/#exclude=kube\*/exclude=kube\*/' /etc/dnf/dnf.conf
+sudo sed -i.bak 's/#exclude=kube\*/exclude=kube\*/' /etc/yum.conf
+
