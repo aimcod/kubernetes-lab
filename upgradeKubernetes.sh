@@ -42,7 +42,7 @@ kubectl uncordon  $(hostname | tr '[:upper:]' '[:lower:]')
 
 kubectl get nodes
 
-read -p "Please review the previou upgrade step, make sure all notes are on $VERSION, then press any key to continue!"
+read -p "Please review the previous upgrade step, make sure all nodes are on $VERSION, then press any key to continue!"
 
 done
 sudo sed -i.bak 's/#exclude=kube\*/exclude=kube\*/' /etc/yum.repos.d/kubernetes.repo
